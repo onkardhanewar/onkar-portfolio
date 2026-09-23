@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { ArrowUp, Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { useLenis } from 'lenis/react';
+import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
 import Cursor from './Cursor';
 import Navbar from './Navbar';
 import Hero from './Hero';
@@ -13,7 +14,7 @@ import ExperienceEducation from './ExperienceEducation';
 import WhatIBring from './WhatIBring';
 import Contact from './Contact';
 import ResumeModal from './ResumeModal';
-import { projects, type Project } from '@/data/projects';
+import { type Project } from '@/data/projects';
 
 export default function Portfolio() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -22,6 +23,13 @@ export default function Portfolio() {
   const [resumeOpen, setResumeOpen] = useState(false);
   const [showBackTop, setShowBackTop] = useState(false);
 
+  // Subscribe to Lenis RAF scroll & progress updates
+  const lenis = useLenis(({ progress, scroll }) => {
+    setScrollProgress(progress);
+    setShowBackTop(scroll > 400);
+  });
+
+  // Fallback for initial load or when Lenis is initializing
   useEffect(() => {
     const handleScroll = () => {
       const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -34,6 +42,49 @@ export default function Portfolio() {
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Control Lenis scrolling when modals are opened / closed
+  useEffect(() => {
+    if (selectedProject || resumeOpen) {
+      lenis?.stop();
+    } else {
+      lenis?.start();
+    }
+  }, [selectedProject, resumeOpen, lenis]);
+
+  // Global smooth scroll interceptor for anchor links
+  useEffect(() => {
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+      const anchor = target.closest('a[href^="#"]') as HTMLAnchorElement | null;
+      if (!anchor) return;
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#') return;
+
+      e.preventDefault();
+      if (href === '#top') {
+        if (lenis) {
+          lenis.scrollTo(0, { duration: 1.2 });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        return;
+      }
+
+      const targetEl = document.querySelector(href);
+      if (targetEl) {
+        if (lenis) {
+          lenis.scrollTo(targetEl as HTMLElement, { offset: -50, duration: 1.2 });
+        } else {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
+  }, [lenis]);
 
   const handleSkillClick = (skillName: string) => {
     // Map clicked skill to closest filter category or search project
@@ -52,14 +103,22 @@ export default function Portfolio() {
       setActiveFilter('ALL');
     }
 
-    const projectsElem = document.getElementById('projects');
-    if (projectsElem) {
-      projectsElem.scrollIntoView({ behavior: 'smooth' });
+    if (lenis) {
+      lenis.scrollTo('#projects', { offset: -50, duration: 1.2 });
+    } else {
+      const projectsElem = document.getElementById('projects');
+      if (projectsElem) {
+        projectsElem.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
   const handleScrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (lenis) {
+      lenis.scrollTo(0, { duration: 1.2 });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (

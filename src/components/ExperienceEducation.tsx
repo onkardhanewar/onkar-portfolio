@@ -228,6 +228,7 @@ export default function ExperienceEducation() {
           >
             <motion.div
               className="modal-dialog-box cert-modal-box"
+              data-lenis-prevent
               role="dialog"
               aria-modal="true"
               aria-labelledby="cert-modal-title"

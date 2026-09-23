@@ -105,6 +105,7 @@ export default function ProjectModal({
     >
       <motion.div
         className="modal-dialog-box"
+        data-lenis-prevent
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-project-title"

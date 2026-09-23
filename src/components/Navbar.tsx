@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { useLenis } from 'lenis/react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 const navLinks = [
@@ -13,30 +14,34 @@ export default function Navbar({ onOpenResume }: { onOpenResume?: () => void }) 
   const [activeSection, setActiveSection] = useState('top');
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+  const updateScrollState = useCallback((currentScroll: number) => {
+    setScrolled(currentScroll > 40);
 
-      const sections = ['top', 'about', 'skills', 'projects', 'contact'];
-      const scrollPos = window.scrollY + 200;
+    const sections = ['top', 'about', 'skills', 'projects', 'contact'];
+    const scrollPos = currentScroll + 200;
 
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            setActiveSection(section);
-            break;
-          }
+    for (const section of sections) {
+      const el = document.getElementById(section);
+      if (el) {
+        const top = el.offsetTop;
+        const height = el.offsetHeight;
+        if (scrollPos >= top && scrollPos < top + height) {
+          setActiveSection(section);
+          break;
         }
       }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    }
   }, []);
+
+  // Hook into Lenis frame scroll events
+  useLenis(({ scroll }) => {
+    updateScrollState(scroll);
+  });
+
+  // Fallback initial scroll check
+  useEffect(() => {
+    updateScrollState(window.scrollY);
+  }, [updateScrollState]);
 
   return (
     <header className={`nav-wrapper ${scrolled ? 'is-scrolled' : ''}`}>

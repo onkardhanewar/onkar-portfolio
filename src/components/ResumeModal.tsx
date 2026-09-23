@@ -38,6 +38,7 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
     >
       <motion.div
         className="modal-dialog-box resume-modal-box"
+        data-lenis-prevent
         role="dialog"
         aria-modal="true"
         aria-labelledby="resume-modal-title"
@@ -51,7 +52,7 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
           <div className="resume-tag-pill">CURRICULUM VITAE · ONKAR DHANEWAR</div>
           <div className="resume-actions-right">
             <a
-              href="/Onkar_Dhanewar_Resume.pdf"
+              href={`${import.meta.env.BASE_URL}Onkar_Dhanewar_Resume.pdf`}
               download="Onkar_Dhanewar_Resume.pdf"
               className="resume-action-btn solid-download-btn"
               data-testid="button-download-pdf"
@@ -61,7 +62,7 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
               <span>DOWNLOAD PDF</span>
             </a>
             <a
-              href="/Onkar_Dhanewar_Resume.pdf"
+              href={`${import.meta.env.BASE_URL}Onkar_Dhanewar_Resume.pdf`}
               target="_blank"
               rel="noreferrer"
               className="resume-action-btn"

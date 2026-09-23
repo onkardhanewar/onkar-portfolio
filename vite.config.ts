@@ -1,7 +1,11 @@
 import path from 'path';
+import { fileURLToPath } from 'url';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const rawPort = process.env.PORT || '5173';
 const port = Number(rawPort) || 5173;
@@ -15,9 +19,9 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(import.meta.dirname, 'src'),
+      '@': path.resolve(__dirname, 'src'),
       '@assets': path.resolve(
-        import.meta.dirname,
+        __dirname,
         '..',
         '..',
         'attached_assets',
@@ -25,9 +29,9 @@ export default defineConfig({
     },
     dedupe: ['react', 'react-dom'],
   },
-  root: path.resolve(import.meta.dirname),
+  root: path.resolve(__dirname),
   build: {
-    outDir: path.resolve(import.meta.dirname, 'dist/public'),
+    outDir: path.resolve(__dirname, 'dist/public'),
     emptyOutDir: true,
   },
   server: {
