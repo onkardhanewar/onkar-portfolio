@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://onkardhanewar.com/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://onkardhanewar.com/onkar-photo.jpg</image:loc>
+      <image:title>Onkar Rajendra Dhanewar — Software Developer Portfolio</image:title>
+      <image:caption>Onkar Dhanewar - B.Tech CSE (2026 Graduate)</image:caption>
+    </image:image>
+  </url>
+</urlset>
