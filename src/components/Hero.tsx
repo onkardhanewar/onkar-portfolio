@@ -30,13 +30,21 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
   }, [reduceMotion]);
 
   return (
-    <section className="hero-section" id="top" ref={heroRef} aria-labelledby="hero-title">
+    <section
+      className="hero-section"
+      id="top"
+      ref={heroRef}
+      aria-labelledby="hero-title"
+    >
       {/* Top Meta Bar */}
       <div className="hero-meta-bar">
         <div className="eyebrow-tag">
           <span className="eyebrow-accent" />
-          <span>SOFTWARE DEVELOPER · B.TECH CSE (2026) · MAHARASHTRA, INDIA</span>
+          <span>
+            SOFTWARE DEVELOPER · B.TECH CSE (2026) · MAHARASHTRA, INDIA
+          </span>
         </div>
+
         <div className="availability-badge">
           <span className="live-dot" />
           <span>AVAILABLE FOR FULL-TIME ROLES</span>
@@ -50,32 +58,52 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
           id="hero-title"
           initial={reduceMotion ? false : { opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{
+            duration: 0.8,
+            ease: [0.16, 1, 0.3, 1],
+          }}
         >
           <span className="hero-line hero-line-1">
             <span className="word-text">Onkar</span>
           </span>
+
           <span className="hero-line hero-line-2">
             <span className="word-text">Rajendra</span>
           </span>
+
           <span className="hero-line hero-line-3">
             <span className="word-text">
               Dhanewar<span className="headline-period">.</span>
             </span>
           </span>
-          {/* SEO Semantic Alternate Names for Google & Search Crawlers */}
+
+          {/* SEO Semantic Alternate Names */}
           <span className="sr-only">
-            Onkar Dhanewar, also known as Omkar Dhanewar, Onkar Dhannewar, Omkar Dhannewar, OnkarOD, ORD.
-            Computer Science Engineer (2026 Graduate), Python Developer, Full Stack Web Developer based in Maharashtra, India.
+            Onkar Dhanewar, also known as Omkar Dhanewar, Onkar Dhannewar,
+            Omkar Dhannewar, OnkarOD, ORD. Computer Science Engineer
+            (2026 Graduate), Python Developer, Full Stack Web Developer
+            based in Maharashtra, India.
           </span>
         </motion.h1>
 
-        {/* Floating Interactive Profile Avatar with User Photo & 2026 Graduate Badge */}
+        {/* Floating Interactive Profile Avatar */}
         <motion.div
           className="hero-orb-wrapper"
-          initial={reduceMotion ? false : { scale: 0.7, opacity: 0, rotate: -8 }}
-          animate={{ scale: 1, opacity: 1, rotate: 0 }}
-          transition={{ duration: 0.9, delay: 0.25, ease: [0.34, 1.56, 0.64, 1] }}
+          initial={
+            reduceMotion
+              ? false
+              : { scale: 0.7, opacity: 0, rotate: -8 }
+          }
+          animate={{
+            scale: 1,
+            opacity: 1,
+            rotate: 0,
+          }}
+          transition={{
+            duration: 0.9,
+            delay: 0.25,
+            ease: [0.34, 1.56, 0.64, 1],
+          }}
           style={
             {
               '--orb-x': `${mouseOffset.x}px`,
@@ -84,25 +112,38 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
             } as CSSProperties
           }
         >
-          <div className="hero-photo-frame" tabIndex={0} role="img" aria-label="Onkar Rajendra Dhanewar - 2026 CSE Graduate">
+          <div
+            className="hero-photo-frame"
+            tabIndex={0}
+            role="img"
+            aria-label="Onkar Rajendra Dhanewar - 2026 CSE Graduate"
+          >
             <div className="hero-photo-circle">
               <img
-                src="/onkar-photo.jpg"
+                src={`${import.meta.env.BASE_URL}onkar-photo.jpg`}
                 alt="Onkar Rajendra Dhanewar - Software Developer"
                 className="hero-avatar-image"
                 loading="eager"
               />
+
               <div className="hero-photo-ring" />
             </div>
 
             {/* Floating 2026 Graduate Badge */}
             <div className="hero-grad-badge">
               <span className="grad-badge-dot" />
+
               <div className="grad-badge-info">
                 <span className="grad-badge-year">2026</span>
-                <span className="grad-badge-sub">CSE GRADUATE</span>
+                <span className="grad-badge-sub">
+                  CSE GRADUATE
+                </span>
               </div>
-              <Sparkles size={13} className="grad-badge-icon" />
+
+              <Sparkles
+                size={13}
+                className="grad-badge-icon"
+              />
             </div>
           </div>
         </motion.div>
@@ -112,17 +153,23 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
       <div className="hero-footer-grid">
         <div className="hero-bio-block">
           <p className="hero-bio-text">
-            Computer Science Engineer focused on turning practical ideas into reliable software solutions.
+            Computer Science Engineer focused on turning practical ideas
+            into reliable software solutions.
           </p>
+
           <div className="hero-tags-row">
             <span>PYTHON</span>
             <span className="bullet-sep">•</span>
+
             <span>C++</span>
             <span className="bullet-sep">•</span>
+
             <span>WEB</span>
             <span className="bullet-sep">•</span>
+
             <span>DATABASES</span>
             <span className="bullet-sep">•</span>
+
             <span>PROBLEM SOLVING</span>
           </div>
         </div>
@@ -135,23 +182,32 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
             data-testid="link-view-projects"
           >
             <span>VIEW PROJECTS</span>
-            <ArrowDown size={16} className="btn-icon-move" />
+            <ArrowDown
+              size={16}
+              className="btn-icon-move"
+            />
           </a>
+
           <a
             href="#contact"
             className="hero-cta-btn hero-cta-outline"
             data-testid="link-contact-me"
           >
             <span>CONTACT ME</span>
-            <Mail size={16} className="btn-icon-move" />
+            <Mail
+              size={16}
+              className="btn-icon-move"
+            />
           </a>
         </div>
       </div>
 
       {/* Quick Access Anchor Links */}
       <div className="hero-quick-links">
+
+        {/* FIXED RESUME PATH */}
         <a
-          href="/Onkar_Dhanewar_Resume.pdf"
+          href={`${import.meta.env.BASE_URL}Onkar_Dhanewar_Resume.pdf`}
           download="Onkar_Dhanewar_Resume.pdf"
           className="quick-link-item"
           data-testid="link-download-resume"
@@ -160,7 +216,9 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
           <span>DOWNLOAD RESUME (PDF)</span>
           <Download size={13} />
         </a>
+
         <span className="quick-sep">/</span>
+
         <a
           href="https://github.com/onkardhanewar"
           target="_blank"
@@ -171,7 +229,9 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
           <span>GITHUB</span>
           <Github size={13} />
         </a>
+
         <span className="quick-sep">/</span>
+
         <a
           href="https://www.linkedin.com/in/onkardhanewar"
           target="_blank"
