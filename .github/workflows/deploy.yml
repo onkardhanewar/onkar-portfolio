@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -17,33 +16,26 @@ concurrency:
 
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile=false
+        run: npm install
+        working-directory: ./artifacts/onkar-portfolio
 
       - name: Build Portfolio
-        run: pnpm --filter @workspace/onkar-portfolio build
+        run: npm run build
+        working-directory: ./artifacts/onkar-portfolio
         env:
-          BASE_PATH: ./
+          BASE_PATH: /onkar-portfolio/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -54,5 +46,4 @@ jobs:
           path: ./artifacts/onkar-portfolio/dist/public
 
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4
