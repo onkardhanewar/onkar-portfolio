@@ -76,14 +76,6 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
               Dhanewar<span className="headline-period">.</span>
             </span>
           </span>
-
-          {/* SEO Semantic Alternate Names */}
-          <span className="sr-only">
-            Onkar Dhanewar, also known as Omkar Dhanewar, Onkar Dhannewar,
-            Omkar Dhannewar, OnkarOD, ORD. Computer Science Engineer
-            (2026 Graduate), Python Developer, Full Stack Web Developer
-            based in Maharashtra, India.
-          </span>
         </motion.h1>
 
         {/* Floating Interactive Profile Avatar */}
@@ -124,6 +116,8 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
                 alt="Onkar Rajendra Dhanewar - Software Developer"
                 className="hero-avatar-image"
                 loading="eager"
+                width={280}
+                height={280}
               />
 
               <div className="hero-photo-ring" />

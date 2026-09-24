@@ -46,7 +46,7 @@ export default function Navbar({ onOpenResume }: { onOpenResume?: () => void }) 
   return (
     <header className={`nav-wrapper ${scrolled ? 'is-scrolled' : ''}`}>
       <nav className="nav-container" aria-label="Primary Navigation">
-        <a href="#top" className="brand-logo" data-testid="link-brand">
+        <a href="#top" className="brand-logo" data-testid="link-brand" aria-label="Onkar Rajendra Dhanewar - Home">
           <span className="brand-badge">ORD.</span>
         </a>
 
@@ -61,6 +61,7 @@ export default function Navbar({ onOpenResume }: { onOpenResume?: () => void }) 
                 href={link.href}
                 className={`nav-link-item ${isActive ? 'is-active' : ''}`}
                 data-testid={`link-nav-${link.label.toLowerCase()}`}
+                aria-label={`${link.label} section`}
               >
                 {link.label}
               </a>

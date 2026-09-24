@@ -196,7 +196,7 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
               </div>
               <p className="doc-entry-sub">Kiran Academy, Pune (javabyKiran)</p>
               <p className="doc-entry-note">
-                <strong>Certificate of Completion:</strong> Python Full Stack · Credential ID: <code>JBK-COURSE-COMP-202605-000156</code> (Issued: 17-May-2026) · <a href="/kiran-academy-certificate.pdf" target="_blank" rel="noreferrer" className="doc-link-accent">View Certificate PDF ↗</a>
+                <strong>Certificate of Completion:</strong> Python Full Stack · Credential ID: <code>JBK-COURSE-COMP-202605-000156</code> (Issued: 17-May-2026) · <a href={`${import.meta.env.BASE_URL}kiran-academy-certificate.pdf`} target="_blank" rel="noreferrer" className="doc-link-accent">View Certificate PDF ↗</a>
               </p>
               <p className="doc-entry-desc">
                 • Completed a 6-month Python Full Stack Development internship, gaining practical experience in Python programming, web development, database integration, and full-stack application development.<br />
@@ -209,14 +209,14 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
         {/* Footer Actions */}
         <div className="resume-doc-footer">
           <a
-            href="/Onkar_Dhanewar_Resume.pdf"
+            href={`${import.meta.env.BASE_URL}Onkar_Dhanewar_Resume.pdf`}
             download="Onkar_Dhanewar_Resume.pdf"
             className="resume-print-footer-btn solid-footer-download"
           >
             <Download size={16} /> DOWNLOAD OFFICIAL RESUME (PDF)
           </a>
           <a
-            href="/Onkar_Dhanewar_Resume.pdf"
+            href={`${import.meta.env.BASE_URL}Onkar_Dhanewar_Resume.pdf`}
             target="_blank"
             rel="noreferrer"
             className="resume-print-footer-btn outline-footer-btn"

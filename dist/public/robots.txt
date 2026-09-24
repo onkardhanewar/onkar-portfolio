@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://onkardhanewar.com/sitemap.xml
+Sitemap: https://onkardhanewar.me/onkar-portfolio/sitemap.xml
