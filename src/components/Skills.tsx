@@ -25,7 +25,7 @@ export default function Skills({ onSkillClick }: { onSkillClick?: (skill: string
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       >
         <h2 className="section-main-heading" id="skills-title">
-          Full-stack curiosity. <span className="heading-highlight">Solid foundations.</span>
+          Technical Skills — <span className="heading-highlight">Python, Web &amp; Software Engineering.</span>
         </h2>
 
         {/* 4 Themed Skill Cards Grid matching reference */}

@@ -147,24 +147,26 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
       <div className="hero-footer-grid">
         <div className="hero-bio-block">
           <p className="hero-bio-text">
-            Computer Science Engineer focused on turning practical ideas
-            into reliable software solutions.
+            Computer Science Engineer and Software Developer specializing in Python, React, JavaScript, web development, SQL and REST APIs.
           </p>
 
           <div className="hero-tags-row">
             <span>PYTHON</span>
             <span className="bullet-sep">•</span>
 
+            <span>REACT</span>
+            <span className="bullet-sep">•</span>
+
             <span>C++</span>
             <span className="bullet-sep">•</span>
 
-            <span>WEB</span>
+            <span>WEB DEV</span>
             <span className="bullet-sep">•</span>
 
             <span>DATABASES</span>
             <span className="bullet-sep">•</span>
 
-            <span>PROBLEM SOLVING</span>
+            <span>REST APIS</span>
           </div>
         </div>
 
@@ -174,6 +176,7 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
             href="#projects"
             className="hero-cta-btn hero-cta-solid"
             data-testid="link-view-projects"
+            aria-label="View Projects by Onkar Rajendra Dhanewar"
           >
             <span>VIEW PROJECTS</span>
             <ArrowDown
@@ -186,6 +189,7 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
             href="#contact"
             className="hero-cta-btn hero-cta-outline"
             data-testid="link-contact-me"
+            aria-label="Contact Onkar Rajendra Dhanewar"
           >
             <span>CONTACT ME</span>
             <Mail
@@ -205,7 +209,8 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
           download="Onkar_Dhanewar_Resume.pdf"
           className="quick-link-item"
           data-testid="link-download-resume"
-          title="Download Official Resume in PDF format"
+          title="Download Onkar Rajendra Dhanewar Resume in PDF format"
+          aria-label="Download Onkar Rajendra Dhanewar Resume in PDF format"
         >
           <span>DOWNLOAD RESUME (PDF)</span>
           <Download size={13} />
@@ -219,6 +224,8 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
           rel="noreferrer"
           className="quick-link-item"
           data-testid="link-hero-github"
+          aria-label="GitHub - Onkar Rajendra Dhanewar"
+          title="GitHub - Onkar Rajendra Dhanewar"
         >
           <span>GITHUB</span>
           <Github size={13} />
@@ -232,6 +239,8 @@ export default function Hero({ onOpenResume }: { onOpenResume?: () => void }) {
           rel="noreferrer"
           className="quick-link-item"
           data-testid="link-hero-linkedin"
+          aria-label="LinkedIn - Onkar Rajendra Dhanewar"
+          title="LinkedIn - Onkar Rajendra Dhanewar"
         >
           <span>LINKEDIN</span>
           <Linkedin size={13} />

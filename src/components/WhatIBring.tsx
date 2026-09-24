@@ -56,7 +56,7 @@ export default function WhatIBring() {
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       >
         <h2 className="section-main-heading" id="what-title">
-          A practical way of <span className="heading-highlight">working.</span>
+          Engineering &amp; Problem Solving — <span className="heading-highlight">Full-Stack Development Capabilities.</span>
         </h2>
 
         {/* 4 Colored Service Cards Grid */}

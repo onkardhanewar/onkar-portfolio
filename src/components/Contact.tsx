@@ -134,10 +134,10 @@ export default function Contact() {
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       >
         <h2 className="section-main-heading text-cream" id="contact-title">
-          Have an opportunity? <span className="heading-highlight-lime">Let’s build something useful.</span>
+          Contact Onkar Rajendra Dhanewar — <span className="heading-highlight-lime">Let’s Build Something Great.</span>
         </h2>
         <p className="contact-lead-sub">
-          I am open to entry-level software development and technology opportunities, projects, and collaborations.
+          I am open to entry-level software development, Python, and web engineering opportunities, projects, and collaborations.
         </p>
 
         {/* Massive Acid-Lime Email Banner Button matching reference */}
@@ -148,6 +148,7 @@ export default function Contact() {
             onClick={handleCopyEmail}
             data-cursor="copy"
             title="Click to copy email or open mail client"
+            aria-label="Copy onkardhanewar@gmail.com to clipboard"
             data-testid="button-giant-email"
           >
             <span className="email-text">ONKARDHANEWAR@GMAIL.COM</span>
@@ -173,6 +174,8 @@ export default function Contact() {
             href="tel:+919284721194"
             className="contact-info-row"
             data-testid="link-phone"
+            aria-label="Call Onkar Rajendra Dhanewar at +91 9284721194"
+            title="Call Onkar Rajendra Dhanewar"
           >
             <div className="info-left">
               <Phone size={15} />
@@ -195,6 +198,8 @@ export default function Contact() {
             rel="noreferrer"
             className="contact-info-row"
             data-testid="link-linkedin"
+            aria-label="LinkedIn - Onkar Rajendra Dhanewar"
+            title="LinkedIn - Onkar Rajendra Dhanewar"
           >
             <div className="info-left">
               <Linkedin size={15} />
@@ -209,6 +214,8 @@ export default function Contact() {
             rel="noreferrer"
             className="contact-info-row"
             data-testid="link-github"
+            aria-label="GitHub - Onkar Rajendra Dhanewar"
+            title="GitHub - Onkar Rajendra Dhanewar"
           >
             <div className="info-left">
               <Github size={15} />

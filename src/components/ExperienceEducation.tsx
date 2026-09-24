@@ -49,7 +49,7 @@ export default function ExperienceEducation() {
       aria-labelledby="exp-title"
     >
       <div className="section-badge-row">
-        <span className="section-index">04 — TRAINING & EDUCATION</span>
+        <span className="section-index">04 — TRAINING &amp; EDUCATION</span>
       </div>
 
       <motion.div
@@ -64,9 +64,9 @@ export default function ExperienceEducation() {
         }}
       >
         <h2 className="section-main-heading" id="exp-title">
-          Learn it.{' '}
+          Experience &amp; Education —{' '}
           <span className="heading-highlight">
-            Build it. Repeat.
+            Practical Training &amp; B.Tech CSE.
           </span>
         </h2>
 
@@ -303,9 +303,11 @@ export default function ExperienceEducation() {
               <div className="cert-image-container">
                 <img
                   src={certificateImage}
-                  alt="Onkar Rajendra Dhanewar - Python Full Stack Certificate of Completion - Kiran Academy"
+                  alt="Onkar Rajendra Dhanewar Python Full Stack Certificate from Kiran Academy"
                   className="cert-img-rendered"
                   loading="eager"
+                  width={1200}
+                  height={850}
                 />
               </div>
 

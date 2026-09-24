@@ -29,7 +29,7 @@ export default function Projects({
 
       <div className="projects-header-block">
         <h2 className="section-main-heading" id="projects-title">
-          Built to solve a <span className="heading-highlight">real task.</span>
+          Featured Projects — <span className="heading-highlight">Software &amp; Web Applications.</span>
         </h2>
 
         {/* Filter Tabs */}

@@ -96,7 +96,7 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
         <div className="resume-document-body" id="printable-resume">
           {/* Header */}
           <div className="resume-doc-header">
-            <h1 id="resume-modal-title" className="doc-name">ONKAR DHANEWAR</h1>
+            <h2 id="resume-modal-title" className="doc-name">ONKAR DHANEWAR</h2>
             <p className="doc-title">Near Destination Center, Nanded City, Pune - 411041, Maharashtra</p>
             <div className="doc-contacts-row">
               <span><Phone size={13} /> +91 9284721194</span>
@@ -114,7 +114,7 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
 
           {/* Education */}
           <div className="doc-section">
-            <h2 className="doc-section-title">EDUCATION</h2>
+            <h3 className="doc-section-title">EDUCATION</h3>
             
             <div className="doc-entry">
               <div className="doc-entry-header">
@@ -144,7 +144,7 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
 
           {/* Skills & Interests */}
           <div className="doc-section">
-            <h2 className="doc-section-title">SKILLS AND INTERESTS</h2>
+            <h3 className="doc-section-title">SKILLS AND INTERESTS</h3>
             <div className="doc-skills-grid">
               <div>
                 <strong>Interests:</strong> Software Engineering, Backend Development, Full-Stack Web Development, Python Development, SQL, REST API Development, Database Systems, Artificial Intelligence, Data Structures &amp; Algorithms, Software Design, Web Technologies.
@@ -157,7 +157,7 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
 
           {/* Projects */}
           <div className="doc-section">
-            <h2 className="doc-section-title">PROJECTS</h2>
+            <h3 className="doc-section-title">PROJECTS</h3>
 
             <div className="doc-project-entry">
               <div className="doc-entry-header">
@@ -188,7 +188,7 @@ export default function ResumeModal({ onClose }: { onClose: () => void }) {
 
           {/* Internship & Trainings */}
           <div className="doc-section">
-            <h2 className="doc-section-title">INTERNSHIP / TRAININGS</h2>
+            <h3 className="doc-section-title">INTERNSHIP / TRAININGS</h3>
             <div className="doc-entry">
               <div className="doc-entry-header">
                 <strong>Python Full Stack Development Intern</strong>

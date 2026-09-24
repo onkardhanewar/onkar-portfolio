@@ -160,7 +160,7 @@ export default function Portfolio() {
         <div className="footer-content-inner">
           <div className="footer-col-left">
             <span className="footer-brand">ORD.</span>
-            <span className="footer-copy">© 2026 Onkar Rajendra Dhanewar</span>
+            <span className="footer-copy">© 2026 Onkar Rajendra Dhanewar. Software Developer &amp; Computer Science Engineer.</span>
           </div>
 
           <div className="footer-col-center">
@@ -174,6 +174,8 @@ export default function Portfolio() {
               rel="noreferrer"
               className="footer-nav-link"
               data-testid="link-footer-github"
+              aria-label="GitHub - Onkar Rajendra Dhanewar"
+              title="GitHub - Onkar Rajendra Dhanewar"
             >
               <Github size={14} /> GITHUB
             </a>
@@ -184,6 +186,8 @@ export default function Portfolio() {
               rel="noreferrer"
               className="footer-nav-link"
               data-testid="link-footer-linkedin"
+              aria-label="LinkedIn - Onkar Rajendra Dhanewar"
+              title="LinkedIn - Onkar Rajendra Dhanewar"
             >
               <Linkedin size={14} /> LINKEDIN
             </a>
@@ -192,6 +196,8 @@ export default function Portfolio() {
               href="mailto:onkardhanewar@gmail.com"
               className="footer-nav-link"
               data-testid="link-footer-email"
+              aria-label="Email Onkar Rajendra Dhanewar"
+              title="Email Onkar Rajendra Dhanewar"
             >
               <Mail size={14} /> EMAIL
             </a>
