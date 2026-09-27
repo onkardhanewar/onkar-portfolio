@@ -32,8 +32,6 @@ jobs:
 
       - name: Build Portfolio
         run: npm run build
-        env:
-          BASE_PATH: /onkar-portfolio/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
